@@ -1,0 +1,172 @@
+import timers.StopTheGame;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        Random random = new Random();
+        int inputNumber;
+        int rabbitNumber;
+        int bearNumber;
+
+        int secretNumber = random.nextInt(100);
+        boolean win = false;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        String instruction = " [Правила игры] \n Компьютер \"загадывает\" целое число от 1 до 100, \n пользователь должен его угадать за 7 попыток (максимум),\n после каждой попытки компьютер подсказывает,\n больше ли загаданное число, или меньше.\n Важно: За неверно введенные данные вы теряете попытку. \n\n Для начала игры введите 1, для выхода из программы введите 3 \n";
+
+        //Intro
+        System.out.println(" [Охота на зайца] \n >1.Начать игру \n >2.Правила \n >3.Выход" );
+        while (true){
+            try {
+                inputNumber = Integer.parseInt(reader.readLine());
+                if (inputNumber == 1){
+                    break;
+                } else if (inputNumber == 2){
+                    System.out.println(instruction);
+                } else if (inputNumber == 3){
+                    System.out.println("До свидания!");
+                    System.exit(0);
+                }
+            } catch (NumberFormatException e){
+                System.out.println("Выберите действие: 1-3");
+            }
+        }
+
+        //Game
+        ArrayList<Animals> forest = createForest();
+        Collections.shuffle(forest);
+        rabbitNumber = checkRabbit(forest);
+        bearNumber = checkBear(forest);
+
+        Timer timer = new Timer();
+        timer.schedule(new StopTheGame(), 120000);
+
+        for (Animals frst : forest){
+            System.out.println(frst.getKind());
+        }
+
+        while (!StopTheGame.isStopGame()) {
+
+            try {
+                inputNumber = Integer.parseInt(reader.readLine());
+
+                if ((inputNumber < 1)||(inputNumber > 100)){
+                    System.out.println("выберите число от 1 до 100");
+                } else {
+                    inputNumber--;
+                    if (forest.get(inputNumber).getKind().equals("Bird")) {
+                        forest.get(inputNumber).animalAction();
+                    } else if (forest.get(inputNumber).getKind().equals("Fox")) {
+                        forest.get(inputNumber).animalAction();
+                    } else if (forest.get(inputNumber).getKind().equals("Racoon")) {
+                        forest.get(inputNumber).animalAction();
+                    } else if (forest.get(inputNumber).getKind().equals("Cookie")) {
+                        forest.get(inputNumber).animalAction();
+                    } else if (forest.get(inputNumber).getKind().equals("Bear")) {
+                        forest.get(inputNumber).animalAction();
+                    } else if (forest.get(inputNumber).getKind().equals("Rabbit")) {
+                        forest.get(inputNumber).animalAction();
+                    }
+                }
+
+            } catch (NumberFormatException e) {
+                System.out.println("введите целое число \n");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+//        System.out.println("Игра началась! \n");
+//        for (int i = 0; i < 7; i++) {
+//            System.out.println("Попытка " + (i+1) + " введите число:");
+//            try {
+//                inputNumber = Integer.parseInt(reader.readLine());
+//                if (inputNumber < secretNumber){
+//                    System.out.println("Больше! \n");
+//                } else if (inputNumber > secretNumber){
+//                    System.out.println("Меньше! \n");
+//                } else {
+//                    win = true;
+//                    break;
+//                }
+//            } catch (NumberFormatException e){
+//                System.out.println("Не тратьте попусту попытки, введите целое число \n");
+//            }
+//        }
+//
+//        if (win){
+//            System.out.println("Правильно, Вы выйграли!");
+//        } else {
+//            System.out.println("Попытки закончились, Вы проиграли! \nЗагаданное число было: " + secretNumber);
+//        }
+
+    }
+
+    private static ArrayList<Animals> createForest(){
+        ArrayList<Animals> forest = new ArrayList<>();
+
+        for (int i = 0; i < 53; i++) {
+            Bird bird = new Bird();
+            bird.setKind("Bird");
+            forest.add(bird);
+        }
+
+        for (int i = 0; i < 30; i++) {
+            Fox fox = new Fox();
+            fox.setKind("Fox");
+            forest.add(fox);
+        }
+
+        for (int i = 0; i < 10; i++) {
+            Racoon racoon = new Racoon();
+            racoon.setKind("Racoon");
+            forest.add(racoon);
+        }
+
+        for (int i = 0; i < 5; i++) {
+            Cookie cookie = new Cookie();
+            cookie.setKind("Cookie");
+            forest.add(cookie);
+        }
+
+        Bear bear = new Bear();
+        bear.setKind("Bear");
+        forest.add(bear);
+
+        Rabbit rabbit = new Rabbit();
+        rabbit.setKind("Rabbit");
+        forest.add(rabbit);
+
+        return forest;
+
+    }
+
+    static int checkRabbit(ArrayList<Animals> forest){
+        int n =0;
+        for (int i = 0; i < forest.size(); i++) {
+            if (forest.get(i).getKind().equals("Rabbit")){
+                n = i;
+            }
+        }
+        return n + 1;
+    }
+
+    static int checkBear(ArrayList<Animals> forest){
+        int n =0;
+        for (int i = 0; i < forest.size(); i++) {
+            if (forest.get(i).getKind().equals("Bear")){
+                n = i;
+            }
+        }
+        return n + 1;
+    }
+}
