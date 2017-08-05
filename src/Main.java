@@ -101,38 +101,6 @@ public class Main {
             }
         }
 
-
-
-
-
-
-
-
-
-//        System.out.println("Игра началась! \n");
-//        for (int i = 0; i < 7; i++) {
-//            System.out.println("Попытка " + (i+1) + " введите число:");
-//            try {
-//                inputNumber = Integer.parseInt(reader.readLine());
-//                if (inputNumber < secretNumber){
-//                    System.out.println("Больше! \n");
-//                } else if (inputNumber > secretNumber){
-//                    System.out.println("Меньше! \n");
-//                } else {
-//                    win = true;
-//                    break;
-//                }
-//            } catch (NumberFormatException e){
-//                System.out.println("Не тратьте попусту попытки, введите целое число \n");
-//            }
-//        }
-//
-//        if (win){
-//            System.out.println("Правильно, Вы выйграли!");
-//        } else {
-//            System.out.println("Попытки закончились, Вы проиграли! \nЗагаданное число было: " + secretNumber);
-//        }
-
     }
 
     private static ArrayList<Animals> createForest(){

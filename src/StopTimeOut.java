@@ -9,7 +9,8 @@ public class StopTimeOut extends TimerTask {
 
     @Override
     public void run() {
-        System.out.println("Время вышло, вы проиграли.");
+        System.out.println("Время вышло. Игра закончена!");
+        System.out.println("Ваш счет:" + Main.getPoints());
         System.exit(0);
         stopGame = true;
     }
