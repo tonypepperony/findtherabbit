@@ -43,9 +43,11 @@ public class Main {
         Timer timer = new Timer();
         timer.schedule(new StopTimeOut(), 300000);
 
-        for (Animals frst : forest){
-            System.out.println(frst.getKind());
-        }
+        System.out.println(" Игра началась!\nИдем по лесу [Выберите точку 1-100]");
+
+//        for (Animals frst : forest){
+//            System.out.println(frst.getKind());
+//        }
 
 
         while (!StopTimeOut.isStopGame()) {
@@ -58,17 +60,21 @@ public class Main {
                 } else {
                     inputNumber--;
                     if (forest.get(inputNumber).getKind().equals("Bird")) {
-                        forest.get(inputNumber).animalAction();
+                        forest.get(inputNumber).action();
+                        System.out.println("[Выберите точку 1-100]");
                     } else if (forest.get(inputNumber).getKind().equals("Fox")) {
-                        forest.get(inputNumber).animalAction();
+                        forest.get(inputNumber).action();
+                        System.out.println("[Выберите точку 1-100]");
                     } else if (forest.get(inputNumber).getKind().equals("Racoon")) {
-                        forest.get(inputNumber).animalAction();
+                        forest.get(inputNumber).action();
+                        System.out.println("[Выберите точку 1-100]");
                     } else if (forest.get(inputNumber).getKind().equals("Cookie")) {
-                        forest.get(inputNumber).animalAction();
+                        forest.get(inputNumber).action();
+                        System.out.println("[Выберите точку 1-100]");
                     } else if (forest.get(inputNumber).getKind().equals("Bear")) {
-                        forest.get(inputNumber).animalAction();
+                        forest.get(inputNumber).action();
                     } else if (forest.get(inputNumber).getKind().equals("Rabbit")) {
-                        forest.get(inputNumber).animalAction();
+                        forest.get(inputNumber).action();
                     }
                 }
 

@@ -14,7 +14,7 @@ public class Rabbit extends Animals{
     }
 
     @Override
-    void animalAction() {
+    void action() {
         System.out.println("Вы видите ЗАЙЦА!\nВаши действия: \n>1.Стреляем! \n>2.Перезарядка");
     }
 

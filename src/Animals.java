@@ -11,7 +11,7 @@ public class Animals {
         this.kind = kind;
     }
 
-    void animalAction(){
+    void action(){
         System.out.println("Action");
     }
 }

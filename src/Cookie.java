@@ -3,7 +3,7 @@
  */
 public class Cookie extends Animals{
     @Override
-    void animalAction() {
+    void action() {
         System.out.println("Вы нашли печенье \n>1.Идем дальше");
     }
 }
