@@ -1,14 +1,38 @@
-import timers.StopTheGame;
-
 import java.io.*;
 import java.util.*;
 
 public class Main {
+    static int points = 0;
+    private static int patron = 10;
+    static int rabbitNumber;
+    static int bearNumber;
+
+
+
+
+
+
+
+    public static int getPoints() {
+        return points;
+    }
+
+    public static void setPoints(int points) {
+        Main.points = points;
+    }
+
+    public static int getPatron() {
+        return patron;
+    }
+
+    public static void setPatron(int patron) {
+        Main.patron = patron;
+    }
+
     public static void main(String[] args) throws IOException {
         Random random = new Random();
         int inputNumber;
-        int rabbitNumber;
-        int bearNumber;
+
 
         int secretNumber = random.nextInt(100);
         boolean win = false;
@@ -41,13 +65,14 @@ public class Main {
         bearNumber = checkBear(forest);
 
         Timer timer = new Timer();
-        timer.schedule(new StopTheGame(), 120000);
+        timer.schedule(new StopTimeOut(), 120000);
 
         for (Animals frst : forest){
             System.out.println(frst.getKind());
         }
 
-        while (!StopTheGame.isStopGame()) {
+
+        while (!StopTimeOut.isStopGame()) {
 
             try {
                 inputNumber = Integer.parseInt(reader.readLine());
@@ -75,7 +100,6 @@ public class Main {
                 System.out.println("введите целое число \n");
             }
         }
-
 
 
 

@@ -1,9 +1,7 @@
-package timers;
-
 import java.util.TimerTask;
 
-public class StopTheGame extends TimerTask {
-    static boolean stopGame;
+public class StopTimeOut extends TimerTask {
+    private static boolean stopGame;
 
     public static boolean isStopGame() {
         return stopGame;
@@ -15,4 +13,5 @@ public class StopTheGame extends TimerTask {
         System.exit(0);
         stopGame = true;
     }
+
 }
