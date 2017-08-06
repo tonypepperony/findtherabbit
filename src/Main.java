@@ -46,9 +46,9 @@ public class Main {
 
         System.out.println(" Игра началась!\nИдем по лесу [Выберите точку 1-100]");
 
-        for (Animals frst : forest){
-            System.out.println(frst.getKind());
-        }
+//        for (Animals frst : forest){
+//            System.out.println(frst.getKind());
+//        }
 
 
         while (!StopTimeOut.isStopGame()) {

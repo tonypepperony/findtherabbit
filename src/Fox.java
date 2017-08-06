@@ -41,26 +41,20 @@ public class Fox extends Animals {
 
         private void clue() throws InterruptedException {
 
-            System.out.println("Лиса: ну я где-то его видела, ммм");
+            System.out.println("Лиса: ну я его где-то видела");
             TimeUnit.SECONDS.sleep(2);
             System.out.print("Лиса: дай-ка вспомнить");
-            for(int i = 0; i < (5 + random.nextInt(8)); i++) {
+            for(int i = 0; i < (5 + random.nextInt(11)); i++) {
                 TimeUnit.SECONDS.sleep(1);
                 System.out.print(".");
             }
 
             if (random.nextInt(2) == 1){
                 int rr = rabbitRange();
-                System.out.println("\n>> Лиса: заяц был в районе " + rr + "-" + (rr+30));
-                System.out.println("Rabbit " + Main.getRabbitNumber());
-                System.out.println(rr);
-                System.out.println("=^.^=");
+                System.out.println("\n>> Лиса: Ах да! Заяц был в районе " + rr + "-" + (rr+30) + "  =^.^=");
             } else {
                 int br = bearRange();
-                System.out.println("\n>> Лиса: заяц был в районе " + br + "-" + (br+30));
-                System.out.println("Bear " + Main.getRabbitNumber());
-                System.out.println(br);
-                System.out.println("=^.^=");
+                System.out.println("\n>> Лиса: Ах да! Заяц был в районе " + br + "-" + (br+30) + "  =^.^=");
             }
 
         }
