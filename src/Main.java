@@ -3,12 +3,12 @@ import java.util.*;
 
 public class Main {
 
-    static int points = 0;
+    private static int points = 0;
     private static int patron = 10;
     private static int  cookies = 0;
 
-    static int rabbitNumber;
-    static int bearNumber;
+    private static int rabbitNumber;
+    private static int bearNumber;
 
 
     public static void main(String[] args) throws IOException {
