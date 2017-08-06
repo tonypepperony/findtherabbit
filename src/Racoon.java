@@ -10,14 +10,14 @@ class Racoon extends Animals {
 
     @Override
     void action() {
-        System.out.println("Вы встретили енота!\nВаши действия: \n>1.Попробовать погладить (+10сек.) \n>2.Угостить печенькой  \n>3.Уйти");
+        System.out.println("Вы встретили енота!\nВаши действия: \n>1.Попробовать погладить (+1мин. к игровому времени) \n>2.Угостить печенькой  \n>3.Уйти");
 
         while (true){
             try {
                 int inputNumber = Integer.parseInt(reader.readLine());
                 if (inputNumber == 1){
                     System.out.println(">> Вы пытаетесь погладить енота");
-                    TimeUnit.SECONDS.sleep(2);
+                    TimeUnit.SECONDS.sleep(1);
                     caress();
                     TimeUnit.SECONDS.sleep(1);
                     System.out.println("\nИдем дальше");
@@ -41,7 +41,8 @@ class Racoon extends Animals {
 
     private void caress(){
         if (random.nextInt(2) == 1){
-            System.out.println("+10 sec");
+            AddTime.setAddtime(AddTime.getAddtime() + 60000);
+            System.out.println("Енот поглажен, вы получаете +1мин. к игровому времени");
         } else {
             System.out.println("Енот оказывается злой и кусает вас!");
         }

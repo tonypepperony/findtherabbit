@@ -5,8 +5,7 @@ public class Main {
 
     private static int points = 0;
     private static int patron = 10;
-    private static int  cookies = 0;
-
+    private static int cookies = 0;
     private static int rabbitNumber;
     private static int bearNumber;
 
@@ -44,7 +43,7 @@ public class Main {
         bearNumber = checkBear(forest);
 
         Timer timer = new Timer();
-        timer.schedule(new StopTimeOut(), 300000);
+        timer.schedule(new AddTime(), 300000);
 
         System.out.println(" Игра началась!\nИдем по лесу [Выберите точку 1-100]");
 
@@ -129,7 +128,7 @@ public class Main {
 
     }
 
-    static int checkRabbit(ArrayList<Animals> forest){
+    private static int checkRabbit(ArrayList<Animals> forest){
         int n =0;
         for (int i = 0; i < forest.size(); i++) {
             if (forest.get(i).getKind().equals("Rabbit")){
@@ -139,7 +138,7 @@ public class Main {
         return n + 1;
     }
 
-    static int checkBear(ArrayList<Animals> forest){
+    private static int checkBear(ArrayList<Animals> forest){
         int n =0;
         for (int i = 0; i < forest.size(); i++) {
             if (forest.get(i).getKind().equals("Bear")){
@@ -180,4 +179,5 @@ public class Main {
     public static void setCookies(int cookies) {
         Main.cookies = cookies;
     }
+
 }
