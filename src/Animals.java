@@ -11,7 +11,7 @@ public class Animals {
         this.kind = kind;
     }
 
-    void action(){
+    void action() throws InterruptedException {
         System.out.println("Action");
     }
 }

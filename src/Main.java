@@ -5,6 +5,8 @@ public class Main {
 
     static int points = 0;
     private static int patron = 10;
+    private static int  cookies = 0;
+
     static int rabbitNumber;
     static int bearNumber;
 
@@ -46,9 +48,9 @@ public class Main {
 
         System.out.println(" Игра началась!\nИдем по лесу [Выберите точку 1-100]");
 
-//        for (Animals frst : forest){
-//            System.out.println(frst.getKind());
-//        }
+        for (Animals frst : forest){
+            System.out.println(frst.getKind());
+        }
 
 
         while (!StopTimeOut.isStopGame()) {
@@ -81,6 +83,8 @@ public class Main {
 
             } catch (NumberFormatException e) {
                 System.out.println("введите целое число \n");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
 
@@ -167,5 +171,13 @@ public class Main {
 
     public static int getBearNumber() {
         return bearNumber;
+    }
+
+    public static int getCookies() {
+        return cookies;
+    }
+
+    public static void setCookies(int cookies) {
+        Main.cookies = cookies;
     }
 }
