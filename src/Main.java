@@ -8,6 +8,7 @@ public class Main {
     static int rabbitNumber;
     static int bearNumber;
 
+
     public static void main(String[] args) throws IOException {
 
         int inputNumber;
@@ -45,9 +46,9 @@ public class Main {
 
         System.out.println(" Игра началась!\nИдем по лесу [Выберите точку 1-100]");
 
-//        for (Animals frst : forest){
-//            System.out.println(frst.getKind());
-//        }
+        for (Animals frst : forest){
+            System.out.println(frst.getKind());
+        }
 
 
         while (!StopTimeOut.isStopGame()) {
@@ -158,5 +159,13 @@ public class Main {
 
     public static void setPatron(int patron) {
         Main.patron = patron;
+    }
+
+    public static int getRabbitNumber() {
+        return rabbitNumber;
+    }
+
+    public static int getBearNumber() {
+        return bearNumber;
     }
 }
