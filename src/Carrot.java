@@ -5,7 +5,7 @@ public class Carrot extends Animals {
     void action() throws InterruptedException {
         System.out.println("Вы нашли морковку!");
         System.out.println("Это поможет вам в охоте на зайца!");
-        System.out.println("+1 carrot\n");
+        System.out.println("[+1 морковка]\n");
         TimeUnit.SECONDS.sleep(1);
         System.out.println("Идем дальше");
         Main.setCarrot(Main.getCarrot()+1);

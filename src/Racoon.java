@@ -23,7 +23,7 @@ class Racoon extends Animals {
                     System.out.println("\nИдем дальше");
                     break;
                 } else if (inputNumber == 2){
-                    getCookie();
+                    giveCookie();
                     System.out.println("\nИдем дальше");
                     break;
                 } else if (inputNumber == 3){
@@ -48,7 +48,7 @@ class Racoon extends Animals {
         }
     }
 
-    private void getCookie() throws InterruptedException {
+    private void giveCookie() throws InterruptedException {
         if (Main.getCookies() > 0){
             System.out.println("Достаем печеньку, даем её еноту");
             System.out.println("-1 cookies");

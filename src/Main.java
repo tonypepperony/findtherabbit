@@ -7,7 +7,6 @@ public class Main {
     private static int patron = 10;
     private static int cookies = 0;
     private static int carrot = 0;
-
     private static int pinecone = 0;
 
     private static int rabbitNumber;
@@ -54,6 +53,8 @@ public class Main {
         for (Animals frst : forest){
             System.out.println(frst.getKind());
         }
+
+        //System.out.println("Rabbit : " + rabbitNumber);
 
 
         while (!StopTimeOut.isStopGame()) {
