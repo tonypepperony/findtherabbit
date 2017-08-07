@@ -66,12 +66,11 @@ public class Rabbit extends Animals{
         if (Main.getCarrot() > 0){
             Main.setCarrot(Main.getCarrot()-1);
             setChance(getChance()+10);
-            System.out.println(">> Вы кидаете зайцу морковку, заяц отвлекается.");
-            System.out.println("[-1 морковка]");
+            System.out.println(">> Вы кидаете зайцу морковку, заяц отвлекается. [-1 морковка]");
             TimeUnit.SECONDS.sleep(1);
             System.out.println("[+10% шанс попадания в зайца]");
         } else {
-            System.out.println(">> У вас нет морковок.");
+            System.out.println(">>[У вас нет морковок]");
         }
     }
 
