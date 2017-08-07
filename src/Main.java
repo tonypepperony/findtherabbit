@@ -4,10 +4,12 @@ import java.util.*;
 public class Main {
 
     private static int points = 0;
+    private static int health = 3;
     private static int patron = 10;
     private static int cookies = 0;
     private static int carrot = 0;
     private static int pinecone = 0;
+    private static int berries = 0;
 
     private static int rabbitNumber;
     private static int bearNumber;
@@ -80,12 +82,19 @@ public class Main {
                         System.out.println("[Выберите точку 1-100]");
                     } else if (forest.get(inputNumber).getKind().equals("Bear")) {
                         forest.get(inputNumber).action();
+                        System.out.println("[Выберите точку 1-100]");
                     } else if (forest.get(inputNumber).getKind().equals("Rabbit")) {
                         forest.get(inputNumber).action();
+                        System.out.println("[Выберите точку 1-100]");
                     } else if (forest.get(inputNumber).getKind().equals("Carrot")) {
                         forest.get(inputNumber).action();
+                        System.out.println("[Выберите точку 1-100]");
                     } else if (forest.get(inputNumber).getKind().equals("Pinecone")) {
                         forest.get(inputNumber).action();
+                        System.out.println("[Выберите точку 1-100]");
+                    } else if (forest.get(inputNumber).getKind().equals("Berries")) {
+                        forest.get(inputNumber).action();
+                        System.out.println("[Выберите точку 1-100]");
                     }
                 }
 
@@ -101,13 +110,13 @@ public class Main {
     private static ArrayList<Animals> createForest(){
         ArrayList<Animals> forest = new ArrayList<>();
 
-        for (int i = 0; i < 48; i++) {
+        for (int i = 0; i < 40; i++) {
             Bird bird = new Bird();
             bird.setKind("Bird");
             forest.add(bird);
         }
 
-        for (int i = 0; i < 25; i++) {
+        for (int i = 0; i < 20; i++) {
             Fox fox = new Fox();
             fox.setKind("Fox");
             forest.add(fox);
@@ -135,6 +144,12 @@ public class Main {
             Pinecone pinecone = new Pinecone();
             pinecone.setKind("Pinecone");
             forest.add(pinecone);
+        }
+
+        for (int i = 0; i < 13; i++) {
+            Berries berries = new Berries();
+            berries.setKind("Berries");
+            forest.add(berries);
         }
 
         Bear bear = new Bear();
@@ -215,5 +230,21 @@ public class Main {
 
     public static void setPinecone(int pinecone) {
         Main.pinecone = pinecone;
+    }
+
+    public static int getBerries() {
+        return berries;
+    }
+
+    public static void setBerries(int berries) {
+        Main.berries = berries;
+    }
+
+    public static int getHealth() {
+        return health;
+    }
+
+    public static void setHealth(int health) {
+        Main.health = health;
     }
 }
