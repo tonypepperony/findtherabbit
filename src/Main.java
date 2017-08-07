@@ -10,7 +10,6 @@ public class Main {
     private static int carrot = 0;
     private static int pinecone = 0;
     private static int berries = 0;
-
     private static int rabbitNumber;
     private static int bearNumber;
 
@@ -57,6 +56,7 @@ public class Main {
         }
 
         //System.out.println("Rabbit : " + rabbitNumber);
+        //System.out.println("Bear : " + bearNumber);
 
 
         while (!StopTimeOut.isStopGame()) {
