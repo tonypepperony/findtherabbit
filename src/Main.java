@@ -81,6 +81,10 @@ public class Main {
                         forest.get(inputNumber).action();
                     } else if (forest.get(inputNumber).getKind().equals("Rabbit")) {
                         forest.get(inputNumber).action();
+                    } else if (forest.get(inputNumber).getKind().equals("Carrot")) {
+                        forest.get(inputNumber).action();
+                    } else if (forest.get(inputNumber).getKind().equals("Pinecone")) {
+                        forest.get(inputNumber).action();
                     }
                 }
 
@@ -96,13 +100,13 @@ public class Main {
     private static ArrayList<Animals> createForest(){
         ArrayList<Animals> forest = new ArrayList<>();
 
-        for (int i = 0; i < 53; i++) {
+        for (int i = 0; i < 48; i++) {
             Bird bird = new Bird();
             bird.setKind("Bird");
             forest.add(bird);
         }
 
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 25; i++) {
             Fox fox = new Fox();
             fox.setKind("Fox");
             forest.add(fox);
@@ -118,6 +122,18 @@ public class Main {
             Cookie cookie = new Cookie();
             cookie.setKind("Cookie");
             forest.add(cookie);
+        }
+
+        for (int i = 0; i < 5; i++) {
+            Carrot carrot = new Carrot();
+            carrot.setKind("Carrot");
+            forest.add(carrot);
+        }
+
+        for (int i = 0; i < 5; i++) {
+            Pinecone pinecone = new Pinecone();
+            pinecone.setKind("Pinecone");
+            forest.add(pinecone);
         }
 
         Bear bear = new Bear();
