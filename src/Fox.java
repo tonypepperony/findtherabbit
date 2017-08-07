@@ -28,7 +28,7 @@ public class Fox extends Animals {
                     System.out.println("\nИдем дальше");
                     break;
                 } else if (inputNumber == 3){
-                    System.out.println("Уходим");
+                    System.out.println(">> Уходим");
                     break;
                 }
             } catch (NumberFormatException e){
@@ -41,7 +41,7 @@ public class Fox extends Animals {
 
         private void clue() throws InterruptedException {
 
-            System.out.println("Лиса: ну я его где-то видела");
+            System.out.println("Лиса: где-то я его видела");
             TimeUnit.SECONDS.sleep(2);
             System.out.print("Лиса: дай-ка вспомнить");
             for(int i = 0; i < (5 + random.nextInt(11)); i++) {
@@ -51,10 +51,10 @@ public class Fox extends Animals {
 
             if (random.nextInt(2) == 1){
                 int rr = rabbitRange();
-                System.out.println("\n>> Лиса: Ах да! Заяц был в районе " + rr + "-" + (rr+30) + "  =^.^=");
+                System.out.println("\nЛиса: Вспомнила! Заяц был в районе " + rr + "-" + (rr+30) + "  =^.^=");
             } else {
                 int br = bearRange();
-                System.out.println("\n>> Лиса: Ах да! Заяц был в районе " + br + "-" + (br+30) + "  =^.^=");
+                System.out.println("\nЛиса: Вспомнила! Заяц был в районе " + br + "-" + (br+30) + "  =^.^=");
             }
 
         }
