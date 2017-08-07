@@ -2,7 +2,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 class AddTime extends TimerTask {
-     private static int addtime = 0;
+    private static int addtime = 0;
 
     public static int getAddtime() {
         return addtime;
