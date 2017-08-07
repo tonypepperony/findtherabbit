@@ -6,6 +6,10 @@ public class Main {
     private static int points = 0;
     private static int patron = 10;
     private static int cookies = 0;
+    private static int carrot = 0;
+
+    private static int pinecone = 0;
+
     private static int rabbitNumber;
     private static int bearNumber;
 
@@ -26,7 +30,7 @@ public class Main {
                 } else if (inputNumber == 2){
                     System.out.println(instruction);
                 } else if (inputNumber == 3){
-                    System.out.println("До свидания!");
+                    System.out.println("Good bye!");
                     System.exit(0);
                 } else {
                     System.out.println("Выберите действие: 1-3");
@@ -180,4 +184,19 @@ public class Main {
         Main.cookies = cookies;
     }
 
+    public static int getCarrot() {
+        return carrot;
+    }
+
+    public static void setCarrot(int carrot) {
+        Main.carrot = carrot;
+    }
+
+    public static int getPinecone() {
+        return pinecone;
+    }
+
+    public static void setPinecone(int pinecone) {
+        Main.pinecone = pinecone;
+    }
 }
