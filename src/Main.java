@@ -53,7 +53,8 @@ public class Main {
                 "Итак, встретив зайца, выпаливаем в него всю огневую мощь пока не попадём, \n" +
                 "либо пока не кончатся патроны. Во время стрельбы заяц прыгает и старается \n" +
                 "увернуться от выстрелов. Изначально шанс попадания в зайца 20%. \n" +
-                "Подкармливая зайца морковкой шансы можно увеличивать (+10% за каждую морковку).\n\n" +
+                "Подкармливая зайца морковкой шансы можно увеличивать (+10% за каждую морковку)." +
+                "\nУбив зайца вы получите +50 очков. Остаток патрон можно будет потратить для добора очков.\n\n" +
                 "                    Вспомогательные итемы\n" +
                 "Гуляя по лесу, вы будите собирать различные вспомогательные итемы - ягоды, \n" +
                 "шишки, печеньки, морковки. Они могут пригодиться вам в различных ситуациях, \n" +
@@ -96,8 +97,8 @@ public class Main {
             System.out.println(frst.getKind());
         }
 
-        //System.out.println("Rabbit : " + rabbitNumber);
-        //System.out.println("Bear : " + bearNumber);
+        System.out.println("Rabbit : " + rabbitNumber);
+        System.out.println("Bear : " + bearNumber);
 
 
         while (!StopTimeOut.isStopGame()) {
@@ -109,32 +110,70 @@ public class Main {
                     System.out.println("выберите число от 1 до 100");
                 } else {
                     inputNumber--;
-                    if (forest.get(inputNumber).getKind().equals("Bird")) {
+                    if (forest.get(inputNumber).getKind().equals("Bird")) if (!forest.get(inputNumber).isEmpty()) {
                         forest.get(inputNumber).action();
+                        forest.get(inputNumber).setEmpty(true);
                         System.out.println("[Выберите точку 1-100]");
-                    } else if (forest.get(inputNumber).getKind().equals("Fox")) {
-                        forest.get(inputNumber).action();
+                    } else {
+                        System.out.println("Вы тут уже были.");
                         System.out.println("[Выберите точку 1-100]");
-                    } else if (forest.get(inputNumber).getKind().equals("Racoon")) {
+                    }
+
+                    if (forest.get(inputNumber).getKind().equals("Fox")) if (!forest.get(inputNumber).isEmpty()) {
                         forest.get(inputNumber).action();
+                        forest.get(inputNumber).setEmpty(true);
                         System.out.println("[Выберите точку 1-100]");
-                    } else if (forest.get(inputNumber).getKind().equals("Cookie")) {
-                        forest.get(inputNumber).action();
+                    } else {
+                        System.out.println("Знакомые места... Наверное вы тут уже были.");
                         System.out.println("[Выберите точку 1-100]");
-                    } else if (forest.get(inputNumber).getKind().equals("Bear")) {
+                    } else if (forest.get(inputNumber).getKind().equals("Racoon")) if (!forest.get(inputNumber).isEmpty()) {
                         forest.get(inputNumber).action();
+                        forest.get(inputNumber).setEmpty(true);
                         System.out.println("[Выберите точку 1-100]");
-                    } else if (forest.get(inputNumber).getKind().equals("Rabbit")) {
-                        forest.get(inputNumber).action();
+                    } else {
+                        System.out.println("Знакомая поляна... Наверное вы тут уже были.");
                         System.out.println("[Выберите точку 1-100]");
-                    } else if (forest.get(inputNumber).getKind().equals("Carrot")) {
+                    } else if (forest.get(inputNumber).getKind().equals("Cookie")) if (!forest.get(inputNumber).isEmpty()) {
                         forest.get(inputNumber).action();
+                        forest.get(inputNumber).setEmpty(true);
                         System.out.println("[Выберите точку 1-100]");
-                    } else if (forest.get(inputNumber).getKind().equals("Pinecone")) {
-                        forest.get(inputNumber).action();
+                    } else {
+                        System.out.println("Тут мы точно уже проходили.");
                         System.out.println("[Выберите точку 1-100]");
-                    } else if (forest.get(inputNumber).getKind().equals("Berries")) {
+                    } else if (forest.get(inputNumber).getKind().equals("Bear")) if (!forest.get(inputNumber).isEmpty()) {
                         forest.get(inputNumber).action();
+                        forest.get(inputNumber).setEmpty(true);
+                        System.out.println("[Выберите точку 1-100]");
+                    } else {
+                        System.out.println("Где-то неподалёку медведь, надо отсюда скорее валить.");
+                        System.out.println("[Выберите точку 1-100]");
+                    } else if (forest.get(inputNumber).getKind().equals("Rabbit")) if (!forest.get(inputNumber).isEmpty()) {
+                        forest.get(inputNumber).action();
+                        forest.get(inputNumber).setEmpty(true);
+                        System.out.println("[Выберите точку 1-100]");
+                    } else {
+                        System.out.println("Знакомые места... Наверное вы тут уже были.");
+                        System.out.println("[Выберите точку 1-100]");
+                    } else if (forest.get(inputNumber).getKind().equals("Carrot")) if (!forest.get(inputNumber).isEmpty()) {
+                        forest.get(inputNumber).action();
+                        forest.get(inputNumber).setEmpty(true);
+                        System.out.println("[Выберите точку 1-100]");
+                    } else {
+                        System.out.println("Из земли что-то выдрано и куча следов. Интересно что тут было?");
+                        System.out.println("[Выберите точку 1-100]");
+                    } else if (forest.get(inputNumber).getKind().equals("Pinecone")) if (!forest.get(inputNumber).isEmpty()) {
+                        forest.get(inputNumber).action();
+                        forest.get(inputNumber).setEmpty(true);
+                        System.out.println("[Выберите точку 1-100]");
+                    } else {
+                        System.out.println("Ничего нет. Надо глянуть в другом месте.");
+                        System.out.println("[Выберите точку 1-100]");
+                    } else if (forest.get(inputNumber).getKind().equals("Berries")) if (!forest.get(inputNumber).isEmpty()) {
+                        forest.get(inputNumber).action();
+                        forest.get(inputNumber).setEmpty(true);
+                        System.out.println("[Выберите точку 1-100]");
+                    } else {
+                        System.out.println("Ничего полезного больше тут нет.");
                         System.out.println("[Выберите точку 1-100]");
                     }
                 }

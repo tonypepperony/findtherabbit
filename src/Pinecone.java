@@ -5,7 +5,7 @@ public class Pinecone extends Animals {
     void action() throws InterruptedException {
         System.out.println("Вы нашли шишку!");
         System.out.println("Возможно, она спасет вам жизнь!");
-        System.out.println("+1 pinecone\n");
+        System.out.println("[+1 шишка]\n");
         TimeUnit.SECONDS.sleep(1);
         System.out.println("Идем дальше");
         Main.setPinecone(Main.getPinecone()+1);

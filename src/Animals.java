@@ -2,6 +2,15 @@
 public class Animals {
     String kind;
     int points;
+    private boolean isEmpty;
+
+    public boolean isEmpty() {
+        return isEmpty;
+    }
+
+    public void setEmpty(boolean empty) {
+        isEmpty = empty;
+    }
 
     public String getKind() {
         return kind;
@@ -14,4 +23,5 @@ public class Animals {
     void action() throws InterruptedException {
         System.out.println("Action");
     }
+
 }

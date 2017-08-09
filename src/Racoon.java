@@ -19,6 +19,7 @@ class Racoon extends Animals {
                     System.out.println(">> Вы пытаетесь погладить енота");
                     TimeUnit.SECONDS.sleep(1);
                     caress();
+                    System.out.println("Енот убегает");
                     TimeUnit.SECONDS.sleep(1);
                     System.out.println("\nИдем дальше");
                     break;

@@ -23,7 +23,7 @@ public class Rabbit extends Animals{
 
         while (true){
             try {
-                System.out.println("Ваши действия: \n>1.Стреляем! \n>2.Бросить морковку \n>3.Уйти");
+                System.out.println("\nВаши действия: \n>1.Стреляем! \n>2.Бросить морковку \n>3.Уйти");
                 int inputNumber = Integer.parseInt(reader.readLine());
                 if (inputNumber == 1){
                     System.out.println(">> Bang!");
@@ -51,7 +51,7 @@ public class Rabbit extends Animals{
             TimeUnit.SECONDS.sleep(3);
             win();
         } else {
-            System.out.println(">> Заяц отпрыгнул, вы не попали!");
+            System.out.println(">> Заяц отпрыгнул, вы не попали!\n");
             Main.setPatron(Main.getPatron()-1);
             StopGame.checkPatronOut();
         }
