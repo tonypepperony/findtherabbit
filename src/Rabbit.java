@@ -43,11 +43,12 @@ public class Rabbit extends Animals{
 
     private void shoot(int chance) throws InterruptedException {
         if (random.nextInt(100) < getChance()){
-            System.out.println(">> Точное попадание! +50 очков");
+            System.out.println(">> Точное попадание! +25 очков");
             System.out.println("Вы убиваете зайца!");
+            Main.setKillRabbit(Main.getKillRabbit() + 1);
             TimeUnit.SECONDS.sleep(1);
             System.out.println("Игра закончена.");
-            Main.setPoints(Main.getPoints()+50);
+            Main.setPoints(Main.getPoints()+25);
             TimeUnit.SECONDS.sleep(3);
             win();
         } else {
@@ -58,7 +59,8 @@ public class Rabbit extends Animals{
     }
 
     private void win(){
-        System.out.println("report");
+        Main.countPoints();
+        Main.printReport();
         System.exit(0);
     }
 

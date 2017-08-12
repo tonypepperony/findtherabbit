@@ -41,7 +41,8 @@ public class Bear extends Animals {
                     TimeUnit.SECONDS.sleep(2);
                     System.out.println("Медведь хватает вас, отрывает вам голову и съедает!");
                     System.out.println("Игра закончена!");
-                    System.out.println("Ваш счет:" + Main.getPoints());
+                    Main.countPoints();
+                    Main.printReport();
                     System.exit(0);
                 }
             } catch (NumberFormatException e){

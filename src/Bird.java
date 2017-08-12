@@ -24,6 +24,7 @@ class Bird extends Animals {
                     System.out.println("Bang! +2 очка");
                     Main.setPoints(Main.getPoints()+2);
                     Main.setPatron(Main.getPatron()-1);
+                    Main.setKillBirds(Main.getKillBirds() + 1);
                     StopGame.checkPatronOut();
                     System.out.println("\nИдем дальше");
                     break;
@@ -50,6 +51,7 @@ class Bird extends Animals {
         if (random.nextInt(2) == 1){
             System.out.println(">> Вы поймали птицу! +2 очка");
             Main.setPoints(Main.getPoints() + 2);
+            Main.setKillBirds(Main.getKillBirds() + 1);
         } else {
             System.out.println(">> Птицу поймать не удалось :(");
         }

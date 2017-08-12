@@ -13,6 +13,10 @@ public class Main {
     private static int rabbitNumber;
     private static int bearNumber;
 
+    private static int killBirds;
+    private static int killFox;
+    private static int killRabbit;
+
 
     public static void main(String[] args) throws IOException {
 
@@ -54,11 +58,11 @@ public class Main {
                 "либо пока не кончатся патроны. Во время стрельбы заяц прыгает и старается \n" +
                 "увернуться от выстрелов. Изначально шанс попадания в зайца 20%. \n" +
                 "Подкармливая зайца морковкой шансы можно увеличивать (+10% за каждую морковку)." +
-                "\nУбив зайца вы получите +50 очков. Остаток патрон можно будет потратить для добора очков.\n\n" +
+                "\nУбив зайца вы получите +25 очков. Остаток патрон можно будет потратить для добора очков.\n\n" +
                 "                    Вспомогательные итемы\n" +
                 "Гуляя по лесу, вы будите собирать различные вспомогательные итемы - ягоды, \n" +
                 "шишки, печеньки, морковки. Они могут пригодиться вам в различных ситуациях, \n" +
-                "а если останутся к концу игры, вы получите +5 очков за каждый итем.\n\n" +
+                "а если останутся к концу игры, вы получите +2 очка за каждый итем.\n\n" +
                 "Приятной игры!\n" +
                 "Для начала игры введите 1, для выхода из игры введите 3 \n";
 
@@ -93,12 +97,14 @@ public class Main {
 
         System.out.println(" Игра началась!\nИдем по лесу [Выберите точку 1-100]");
 
-        for (Animals frst : forest){
-            System.out.println(frst.getKind());
-        }
+//        for (Animals frst : forest){
+//            System.out.println(frst.getKind());
+//        }
 
-        System.out.println("Rabbit : " + rabbitNumber);
-        System.out.println("Bear : " + bearNumber);
+//        System.out.println("Rabbit : " + rabbitNumber);
+//        System.out.println("Bear : " + bearNumber);
+
+        //printReport();
 
 
         while (!StopTimeOut.isStopGame()) {
@@ -326,5 +332,61 @@ public class Main {
 
     public static void setHealth(int health) {
         Main.health = health;
+    }
+
+    public static void countPoints(){
+
+        if (getCookies() > 0){
+            setPoints(getPoints() + (getCookies()*2));
+        }
+
+        if (getCarrot() > 0){
+            setPoints(getPoints() + (getCarrot()*2));
+        }
+
+        if (getPinecone() > 0){
+            setPoints(getPoints() + (getPinecone()*2));
+        }
+
+        if (getBerries() > 0){
+            setPoints(getPoints() + (getBerries()*2));
+        }
+
+    }
+
+    public static int getKillBirds() {
+        return killBirds;
+    }
+
+    public static void setKillBirds(int killBirds) {
+        Main.killBirds = killBirds;
+    }
+
+    public static int getKillFox() {
+        return killFox;
+    }
+
+    public static void setKillFox(int killFox) {
+        Main.killFox = killFox;
+    }
+
+    public static int getKillRabbit() {
+        return killRabbit;
+    }
+
+    public static void setKillRabbit(int killRabbit) {
+        Main.killRabbit = killRabbit;
+    }
+
+    public static void printReport(){
+        System.out.println("\n              Счет:\n");
+        System.out.println("Птиц убито       - " +  getKillBirds() + "  -> " + getKillBirds() * 2 + " очков");
+        System.out.println("Лисиц убито      - " +  getKillFox() + "  -> " + getKillFox() * 5 + " очков");
+        System.out.println("Зайцев убито     - " +  getKillRabbit() + "  -> " + getKillRabbit() * 25 + " очков");
+        System.out.println("Остаток печенек  - " +  getCookies() + "  -> " + getCookies() * 2 + " очков");
+        System.out.println("Остаток морковок - " +  getCarrot() + "  -> " + getCarrot() * 2 + " очков");
+        System.out.println("Остаток ягод     - " +  getBerries() + "  -> " + getBerries() * 2 + " очков");
+        System.out.println("Остаток шишек    - " +  getPinecone() + "  -> " + getPinecone() * 2 + " очков\n");
+        System.out.println("                 Итого : " + getPoints() + " очков");
     }
 }

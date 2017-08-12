@@ -10,7 +10,7 @@ public class Fox extends Animals {
 
     @Override
     void action() {
-        System.out.println("Вы встретили лису!\nВаши действия: \n>1.Спросить где заяц \n>2.Пристрелить (5 очков)  \n>3.Уйти");
+        System.out.println("Вы встретили лису!\nВаши действия: \n>1.Спросить где заяц \n>2.Пристрелить \n>3.Уйти");
 
         while (true){
             try {
@@ -24,6 +24,7 @@ public class Fox extends Animals {
                     System.out.println("Bang! +5 очков");
                     Main.setPoints(Main.getPoints()+5);
                     Main.setPatron(Main.getPatron()-1);
+                    Main.setKillFox(Main.getKillFox() + 1);
                     StopGame.checkPatronOut();
                     System.out.println("\nИдем дальше");
                     break;
